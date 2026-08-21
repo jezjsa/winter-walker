@@ -258,7 +258,6 @@ export async function startWalk(canvas) {
     loadSheet("/sprites/walker-right.png", WALK_COUNT),
     loadSheet("/sprites/jumper-right.png", JUMP_COUNT),
   ]);
-  const scale = TARGET_HEIGHT / walkFrames[REST_FRAMES[0]].height;
 
   const keys = new Set();
   const player = {
@@ -335,10 +334,11 @@ export async function startWalk(canvas) {
     const sprite = player.jumping
       ? (jumpFrames[Math.min(JUMP_COUNT - 1, Math.floor(player.jumpAnim))] ?? jumpFrames[0])
       : (walkFrames[player.frame] ?? walkFrames[0]);
+    const scale = TARGET_HEIGHT / sprite.height;
     const groundY = canvas.height - 92;
     const centerX = canvas.width * 0.5;
     const lift = player.jumping ? jumpLift(player.jumpAnim) : 0;
-    const drawH = sprite.height * scale;
+    const drawH = TARGET_HEIGHT;
     const drawY = groundY - drawH + 6 - lift;
 
     ctx.clearRect(0, 0, canvas.width, canvas.height);

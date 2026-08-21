@@ -1,5 +1,12 @@
 export const CHANGELOG = [
   {
+    at: "2026-08-21T13:47:00+01:00",
+    title: "Same size in the air",
+    items: [
+      "The jump is the same size as the walk — a third smaller, not a bigger sprite when he leaves the ground",
+    ],
+  },
+  {
     at: "2026-08-21T13:41:00+01:00",
     title: "Jump the snow",
     items: [
