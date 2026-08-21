@@ -1,5 +1,12 @@
 export const CHANGELOG = [
   {
+    at: "2026-08-21T13:51:00+01:00",
+    title: "Jump matches the walk",
+    items: [
+      "The crouch and the top of the jump stay the same size as the walk, instead of swelling",
+    ],
+  },
+  {
     at: "2026-08-21T13:47:00+01:00",
     title: "Same size in the air",
     items: [

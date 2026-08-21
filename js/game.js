@@ -6,7 +6,7 @@ const JUMP_COUNT = 21;
 const WALK_SPEED = 220;
 const ANIM_FPS = 22;
 const JUMP_FPS = 20;
-const JUMP_HEIGHT = 148;
+const JUMP_HEIGHT = 100;
 const JUMP_LIFT_START = 5;
 const JUMP_LIFT_END = 17;
 const TARGET_HEIGHT = Math.round(236 * (2 / 3));
@@ -258,6 +258,15 @@ export async function startWalk(canvas) {
     loadSheet("/sprites/walker-right.png", WALK_COUNT),
     loadSheet("/sprites/jumper-right.png", JUMP_COUNT),
   ]);
+  // One scale from the walk so a crouch is shorter, not zoomed.
+  // Tall jump poses are drawn larger in the sheet — shrink those
+  // further so the apex stays the same size as the walker.
+  const walkRefH = walkFrames[REST_FRAMES[0]].height;
+  const bodyScale = TARGET_HEIGHT / walkRefH;
+  const poseScale = (sprite) => {
+    if (sprite.height <= walkRefH) return bodyScale;
+    return (TARGET_HEIGHT / sprite.height) * 0.82;
+  };
 
   const keys = new Set();
   const player = {
@@ -334,11 +343,11 @@ export async function startWalk(canvas) {
     const sprite = player.jumping
       ? (jumpFrames[Math.min(JUMP_COUNT - 1, Math.floor(player.jumpAnim))] ?? jumpFrames[0])
       : (walkFrames[player.frame] ?? walkFrames[0]);
-    const scale = TARGET_HEIGHT / sprite.height;
+    const scale = poseScale(sprite);
     const groundY = canvas.height - 92;
     const centerX = canvas.width * 0.5;
     const lift = player.jumping ? jumpLift(player.jumpAnim) : 0;
-    const drawH = TARGET_HEIGHT;
+    const drawH = sprite.height * scale;
     const drawY = groundY - drawH + 6 - lift;
 
     ctx.clearRect(0, 0, canvas.width, canvas.height);
