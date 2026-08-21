@@ -1,5 +1,13 @@
 export const CHANGELOG = [
   {
+    at: "2026-08-21T13:41:00+01:00",
+    title: "Jump the snow",
+    items: [
+      "Space jumps. He crouches, leaves the ground, and lands on the same walk",
+      "He stays in the middle of the screen — clouds, hills, and pines scroll past at different speeds",
+    ],
+  },
+  {
     at: "2026-08-21T13:05:00+01:00",
     title: "First steps",
     items: [

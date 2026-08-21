@@ -3,14 +3,21 @@ export const FEATURES = [
     title: "Walking",
     items: [
       "Hold O to walk left, P to walk right",
-      "The walker stays on the snow and turns to face the way you are going",
-      "Let go and they stand still",
+      "The walker stays in the middle of the screen. The winter path scrolls past",
+      "Let go and they finish the step, then stand still",
+    ],
+  },
+  {
+    title: "Jumping",
+    items: [
+      "Space jumps. You can keep walking left or right in the air",
+      "He has to land before he can jump again",
     ],
   },
   {
     title: "This run only",
     items: [
-      "No score yet — this build is just the walk",
+      "No score yet — this build is the walk and the jump",
     ],
   },
   {
@@ -24,7 +31,7 @@ export const FEATURES = [
   {
     title: "UI",
     items: [
-      "Winter sky, snow floor, and the walker in the middle",
+      "Parallax winter sky, hills, pines, and snow, with the walker in the middle",
       "Left rail: Online and Account",
       "Right rail: Back to Games, Game Features, Keys, News",
     ],
