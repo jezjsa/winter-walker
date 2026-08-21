@@ -1,5 +1,12 @@
 export const CHANGELOG = [
   {
+    at: "2026-08-21T15:46:00+01:00",
+    title: "One size for the jump",
+    items: [
+      "Every jump pose uses the same scale as the walk — a third smaller than the original, with no pose zooming up or down",
+    ],
+  },
+  {
     at: "2026-08-21T13:51:00+01:00",
     title: "Jump matches the walk",
     items: [
