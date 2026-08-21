@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Winter Walker</title>
+  <meta name="description" content="Walk the snow. Same Arcade Engage account as Field Rush and No Brakes." />
+  <link rel="canonical" href="https://winterwalker.arcadeengage.com/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://winterwalker.arcadeengage.com/" />
+  <meta property="og:title" content="Winter Walker" />
+  <meta property="og:description" content="Walk the snow. O left, P right." />
+  <meta property="og:image" content="https://winterwalker.arcadeengage.com/og.jpg" />
+  <link rel="stylesheet" href="/css/theme.css" />
+</head>
+<body>
+  <div class="page">
+    <aside class="side-rail side-rail-left" aria-label="Players and account">
+      <section class="side-card">
+        <p class="keys-kicker">Online</p>
+        <p id="online-empty" class="signup-lead">Looking for walkers…</p>
+        <ul id="online-list" class="online-list"></ul>
+      </section>
+      <section class="side-card" aria-label="Account">
+        <p class="keys-kicker">Account</p>
+        <div id="account-guest">
+          <h2>Sign in</h2>
+          <p class="signup-lead">Magic link. Same Arcade Engage account as Field Rush and No Brakes.</p>
+          <form id="signup-form" class="signup-form">
+            <input id="signup-email" name="email" type="email" autocomplete="email" maxlength="120" placeholder="you@email.com" required />
+            <button type="submit" class="btn btn-primary" id="btn-signup">Send link</button>
+            <p id="signup-status" class="signup-status"></p>
+          </form>
+        </div>
+        <div id="account-user" class="hidden">
+          <h2 id="account-name">Signed in</h2>
+          <p id="account-level" class="account-level"></p>
+          <button type="button" class="btn btn-ghost" id="btn-signout">Sign out</button>
+        </div>
+      </section>
+    </aside>
+
+    <div class="game-shell">
+      <header class="hud">
+        <div class="brand">
+          <div>
+            <p class="keys-kicker">Arcade Engage</p>
+            <h1>Winter Walker</h1>
+          </div>
+        </div>
+        <div class="hud-stats">
+          <div class="stat">
+            <span class="stat-label">Online</span>
+            <strong id="stat-online">–</strong>
+          </div>
+        </div>
+      </header>
+
+      <div class="stage-wrap">
+        <canvas id="game" width="1024" height="480"></canvas>
+        <p class="hint">O left · P right</p>
+      </div>
+
+      <section class="scoreboard" id="scoreboard">
+        <div class="scoreboard-head">
+          <h2>Scoreboard</h2>
+          <p id="scoreboard-status">Nothing to post yet. Just the walk.</p>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th>When</th>
+            </tr>
+          </thead>
+          <tbody id="scoreboard-body">
+            <tr><td colspan="3">Connecting…</td></tr>
+          </tbody>
+        </table>
+      </section>
+    </div>
+
+    <aside class="side-rail" aria-label="Games and keys">
+      <section class="side-card">
+        <p class="keys-kicker">Arcade Engage</p>
+        <a class="news-more" href="https://arcadeengage.com/">Back to Games</a>
+      </section>
+      <section class="side-card">
+        <p class="keys-kicker">Game Features</p>
+        <button type="button" class="news-more" id="btn-features">View current game features</button>
+      </section>
+      <section class="side-card">
+        <p class="keys-kicker">Keys</p>
+        <ul class="keys-list">
+          <li><span class="keys-combo"><kbd>O</kbd></span><span>Walk left</span></li>
+          <li><span class="keys-combo"><kbd>P</kbd></span><span>Walk right</span></li>
+        </ul>
+      </section>
+      <section class="side-card">
+        <p class="keys-kicker">News</p>
+        <ul class="news-list" id="news-list"></ul>
+        <button type="button" class="news-more" id="btn-changelog">View changelog</button>
+      </section>
+    </aside>
+  </div>
+
+  <div id="changelog-overlay" class="overlay hidden" role="dialog" aria-modal="true">
+    <div class="panel">
+      <button type="button" id="btn-close-changelog" class="overlay-close" aria-label="Close">×</button>
+      <p class="keys-kicker">Winter Walker</p>
+      <h2>Changelog</h2>
+      <div id="changelog-body" class="changelog-body"></div>
+    </div>
+  </div>
+  <div id="features-overlay" class="overlay hidden" role="dialog" aria-modal="true">
+    <div class="panel">
+      <button type="button" id="btn-close-features" class="overlay-close" aria-label="Close">×</button>
+      <p class="keys-kicker">Winter Walker</p>
+      <h2>Game Features</h2>
+      <div id="features-body" class="changelog-body"></div>
+    </div>
+  </div>
+
+  <script type="module" src="/js/main.js"></script>
+</body>
+</html>
