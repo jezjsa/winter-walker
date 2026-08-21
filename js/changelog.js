@@ -3,7 +3,7 @@ export const CHANGELOG = [
     at: "2026-08-21T13:05:00+01:00",
     title: "First steps",
     items: [
-      "Walk the snow with O left and P right at winterwalker.arcadeengage.com. Same Arcade Engage sign-in as Field Rush and No Brakes",
+      "Walk the snow with O left and P right. Same Arcade Engage sign-in as Field Rush and No Brakes",
       "Online list and scoreboard sit beside the walk — nothing to post yet, just the same account",
     ],
   },
