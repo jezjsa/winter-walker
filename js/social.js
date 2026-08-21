@@ -213,6 +213,11 @@ export async function adoptFieldRushIdentity() {
 
   if (getSession()) return await refreshUser();
 
+  // On localhost, stay put so the walk loads even if Field Rush is not running.
+  if (location.hostname === "localhost" || location.hostname === "127.0.0.1") {
+    return await refreshUser();
+  }
+
   const next = `${location.origin}${location.pathname}${location.search}`;
   location.replace(`${FIELD_RUSH_ORIGIN}/handoff.html?next=${encodeURIComponent(next)}`);
   return undefined;
